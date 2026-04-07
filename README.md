@@ -50,7 +50,8 @@ sls deploy
 ---
 
 ## 🧪 Test API
-curl https://your-api-url.amazonaws.com/dev/hello
+GET https://2bnrvw4we4.execute-api.us-east-2.amazonaws.com/hello  
+GET https://2bnrvw4we4.execute-api.us-east-2.amazonaws.com/bye
 
 ---
 
