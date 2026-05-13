@@ -112,5 +112,49 @@ curl -X POST "https://ri9qb7xmba.execute-api.us-east-2.amazonaws.com/dev/create-
 - Add DELETE API
 - Add Update User API
 - Add Authentication
+
+- ---
+
+# 📸 Project Screenshots
+
+## 🚀 Successful Deployment
+
+![Deploy](./1000132195.jpg)
+
+---
+
+## ✅ Successful API Response
+
+![API Response](./1000132196.jpg)
+
+---
+
+## 🗄️ DynamoDB Table
+
+![DynamoDB Table](./1000132201.jpg)
+
+---
+
+## 📊 DynamoDB Stored Data
+
+![Stored Data](./Screenshot%202026-04-05%20163810.png)
+
+---
+
+## 📂 Project Files
+
+![Project Structure](./Screenshot%202026-04-05%20171623.png)
+
+---
+
+## 💻 Frontend GUI
+
+(Add GUI screenshot here)
+
+---
+
+## ⚡ Lambda Function
+
+(Add Lambda screenshot here)
 - Add Frontend Deployment
 - CI/CD
