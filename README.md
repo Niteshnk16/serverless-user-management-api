@@ -1,74 +1,116 @@
 # 🚀 Serverless User Management API
 
-This project is a Serverless REST API built using AWS Lambda, API Gateway, and Serverless Framework.
+This project is a Serverless REST API built using AWS Lambda, API Gateway, DynamoDB, and Serverless Framework.
 
-It demonstrates how to deploy a scalable backend without managing servers.
+It demonstrates how to build and deploy a scalable backend without managing servers.
 
 ---
 
-## 📌 Features
-- Serverless architecture (no server management)
-- Fast and scalable API
+# 📌 Features
+
+- Serverless architecture (No server management)
+- REST API using AWS API Gateway
+- Data storage with DynamoDB
+- Fast and scalable backend
 - Easy deployment using Serverless Framework
 - Cloud-based backend using AWS
 
 ---
 
-## 🛠 Tech Stack
+# 🛠️ Tech Stack
+
 - AWS Lambda
-- API Gateway
+- AWS API Gateway
+- AWS DynamoDB
 - Serverless Framework
 - Python
+- Node.js
 
 ---
 
-## 📡 API Endpoints
+# 🔗 API Endpoint
 
-GET https://2bnrvw4we4.execute-api.us-east-2.amazonaws.com/hello  
-GET https://2bnrvw4we4.execute-api.us-east-2.amazonaws.com/bye
+## Create User API
+
+POST
+
+```bash
+https://ri9qb7xmba.execute-api.us-east-2.amazonaws.com/dev/create-user
+```
 
 ---
 
-## 📥 Sample Response
+# 📦 Sample Request
+
+```bash
+curl -X POST "https://ri9qb7xmba.execute-api.us-east-2.amazonaws.com/dev/create-user" \
+-H "Content-Type: application/json" \
+-d '{"name":"Nitesh","email":"nitesh@gmail.com"}'
+```
+
+---
+
+# ✅ Sample Response
+
+```json
 {
-  "message": "Go Serverless v4.0! Your function executed successfully!"
+  "message": "User Created Successfully",
+  "data": {
+    "userId": "4757c9f3-78b5-4044-b9fb-405a09d29e6d",
+    "name": "Nitesh",
+    "email": "nitesh@gmail.com"
+  }
 }
+```
 
 ---
 
-## ⚙️ Setup & Deployment
+# ⚙️ Setup & Deployment
 
-Install Serverless:
+## Install Serverless Framework
+
+```bash
 npm install -g serverless
+```
 
-Configure AWS:
+## Configure AWS
+
+```bash
 aws configure
+```
 
-Deploy project:
-sls deploy
+## Deploy Project
 
----
-
-## 🧪 Test API
-GET https://2bnrvw4we4.execute-api.us-east-2.amazonaws.com/hello  
-GET https://2bnrvw4we4.execute-api.us-east-2.amazonaws.com/bye
+```bash
+serverless deploy
+```
 
 ---
 
-## 📂 Project Structure
-- handler.py → Lambda function code  
-- serverless.yml → configuration file  
-- README.md → project documentation  
+# 🧪 Test API
+
+```bash
+curl -X POST "https://ri9qb7xmba.execute-api.us-east-2.amazonaws.com/dev/create-user" \
+-H "Content-Type: application/json" \
+-d '{"name":"Nitesh","email":"nitesh@gmail.com"}'
+```
 
 ---
 
-## 🚀 Future Improvements
-- Add database (DynamoDB)
-- Add POST/PUT APIs
-- Add authentication
-- CI/CD integration (GitHub Actions)
+# 📂 Project Structure
+
+- `handler.py` → Lambda function code
+- `serverless.yml` → Serverless configuration
+- `README.md` → Project documentation
+- `index.html` → Simple frontend UI
 
 ---
 
-## 👨‍💻 Author
-Nitesh Kumar
+# 🚀 Future Improvements
+
+- Add GET API
+- Add DELETE API
+- Add Update User API
+- Add Authentication
+- Add Frontend Deployment
+- CI/CD
