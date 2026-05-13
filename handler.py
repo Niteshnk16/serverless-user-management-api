@@ -1,37 +1,26 @@
 import json
+import boto3
+import uuid
 
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('users')
 
-def hello(event, context):
-    body = {
-        "status": "success",   
-        "message": "Hello Dosto",
-        "author": "Nitesh Kumar",
-        "service": "Serverless API"
+def create_user(event, context):
+
+    body = json.loads(event['body'])
+
+    user = {
+        "userId": str(uuid.uuid4()),
+        "name": body['name'],
+        "email": body['email']
     }
 
-    return  {
-            "statusCode": 200,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "body": json.dumps(body)
+    table.put_item(Item=user)
 
-        }
-
-def bye(event, context):
-    body = {
-        "status": "success",
-        "message": "Goodbye Dosto",
-        "author": "Nitesh Kumar",
-        "service": "Serverless API"
+    return {
+        "statusCode": 200,
+        "body": json.dumps({
+            "message": "User created",
+            "data": user
+        })
     }
-
-    return  {
-            "statusCode": 200,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "body": json.dumps(body)
-        }
-
-
