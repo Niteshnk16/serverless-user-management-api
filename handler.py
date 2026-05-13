@@ -5,6 +5,7 @@ import uuid
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('users')
 
+
 def create_user(event, context):
 
     body = json.loads(event['body'])
@@ -19,8 +20,12 @@ def create_user(event, context):
 
     return {
         "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        },
         "body": json.dumps({
-            "message": "User created",
+            "message": "User Created Successfully",
             "data": user
         })
     }
